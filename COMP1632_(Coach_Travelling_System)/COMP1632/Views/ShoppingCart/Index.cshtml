@@ -1,0 +1,52 @@
+﻿@model COMP1632.ViewModels.IndexShoppingCartViewModel
+@{
+    ViewBag.Title = "Cart";
+}
+<div class="page-header">
+    <h2>Shopping cart</h2>
+</div>
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>Trip:</th>
+        <th>Quantity:</th>
+        <th>Price:</th>
+    </tr>
+
+    @foreach (var cartItem in Model.ShoppingCart.CartItems)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => cartItem.Trip.Title)</td>
+            <td>@Html.DisplayFor(modelItem => cartItem.Quantity)</td>
+            <td>@Html.DisplayFor(modelItem => cartItem.Trip.Price)</td>
+        </tr>
+    }
+
+</table>
+
+<table class="table table-condensed" style="width: auto; margin-left:auto">
+    <tr>
+        <th>
+            Overall:
+        </th>
+        <td>@Html.DisplayFor(modelItem => modelItem.Total)</td>
+    </tr>
+</table>
+
+<div class="row">
+    <div class="col-md-1 col-md-offset-8">
+        @using (Html.BeginForm("ClearCart", "ShoppingCart", FormMethod.Post))
+        {
+            <button type="submit" class="btn btn-warning">Clear cart</button>
+        }
+    </div>
+    <div class="col-md-2 col-md-offset-1">
+        @using (Html.BeginForm("Preferences", "ShoppingCart", FormMethod.Post))
+        {
+            <button type="submit" class="btn btn-default" @((Model.ShoppingCart.CartItems.Count < 1) ? "disabled" : "")>Proceed to checkout.</button>
+        }
+    </div>
+</div>
+
+
+
+

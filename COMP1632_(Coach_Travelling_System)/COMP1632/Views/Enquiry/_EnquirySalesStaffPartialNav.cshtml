@@ -1,0 +1,8 @@
+﻿
+<ul class="nav nav-pills" style="margin-top:10px;">
+
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Unanswered" ? "active" : "")">@Html.ActionLink("Unanswered", "Unanswered", "Enquiry")</li>
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Answered" ? "active" : "" )">@Html.ActionLink("Answered", "Answered", "Enquiry")</li>
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "All" ? "active" : "" )">@Html.ActionLink("All", "All", "Enquiry")</li>
+
+</ul>

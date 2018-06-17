@@ -1,0 +1,25 @@
+﻿@model COMP1632.ViewModels.PreferencesShoppingCartViewModel
+<div class="container">
+<div class="page-header"><h2>Seat preferences</h2></div>
+    @using (Html.BeginForm("Checkout", "ShoppingCart", FormMethod.Post))
+    {
+        for (int i = 0, length = Model.CartItemPreferences.Count; i < length; i++)
+        {
+            <div class="panel panel-default">
+                @Html.HiddenFor(m => Model.CartItemPreferences[i].CartItemId)
+                <div class="row panel-body">
+                    <div class="col-md-6">@Html.DisplayFor(m=>m.CartItemPreferences[i].Title)</div>
+                </div>
+                <div class="row panel-body">
+                    <div class="col-md-1 label">Type: </div>
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => Model.CartItemPreferences[i].Selected, Model.PreferenceOptions,
+                            new {@class = "form-control", @style = "display:initial; width:auto;"})
+                    </div>
+                </div>
+            </div>
+        }
+       <input type="submit" value="Checkout" class="btn btn-default"/>
+    }
+</div>
+

@@ -1,0 +1,47 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<COMP1632.Models.Enquiry>
+@{
+    ViewBag.Title = "All";
+}
+@Html.Partial("_EnquirySalesStaffPartialNav")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th>
+            
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+            <td>
+                @if (item.Answer.IsNullOrWhiteSpace())
+                {
+                    @Html.ActionLink("Answer", "Answer", new { id = item.Id })
+                }
+
+            </td>
+
+        </tr>
+    }
+
+</table>

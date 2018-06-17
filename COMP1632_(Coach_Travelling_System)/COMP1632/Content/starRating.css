@@ -1,0 +1,11 @@
+﻿.starHighlight {
+    color: yellowgreen!important;
+}
+
+.starSelected {
+    color: orange!important;
+}
+
+.starEmpty {
+    color: grey;
+}
