@@ -1,0 +1,40 @@
+﻿@model COMP1632.ViewModels.IndexHomeViewModel
+@{
+    ViewBag.Title = "Trips";
+}
+<div class="page-header">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group form-inline">
+            <label class="control-label">From</label>
+            @Html.TextBoxFor(u => u.From,  new {@class = "form-control", @placeholder="From"})
+            <label class="control-label">To</label>
+            @Html.TextBoxFor(u => u.To, new { @class = "form-control", @placeholder = "To" })
+            <label class="control-label">Price between</label>
+            @Html.TextBoxFor(u => u.PriceMin, new { @class = "form-control", @placeholder = "Minimum" })
+            @Html.TextBoxFor(u => u.PriceMax, new { @class = "form-control", @placeholder = "Maximum" })
+            <button type="submit" class="btn btn-default">Search</button>
+        </div>
+    }
+<h2>Trips in offer:</h2>
+</div>
+<table class="table">
+    @foreach (var item in Model.TripsInfo)
+    {
+        <tr>
+            <td rowspan="2">@Html.DisplayFor(modelItem => item.Trip.Title)</td>
+            <th>From:</th>
+            <td>@Html.DisplayFor(modelItem => item.Trip.From)</td>
+            <th rowspan="2">Price</th>
+            <td rowspan="2">@Html.DisplayFor(modelItem => item.Trip.Price)</td>
+            <th rowspan="2">Tickets left:</th>
+            <td rowspan="2">@Html.DisplayFor(modelItem => item.TicketsLeft)</td>
+            <td rowspan="2">@Html.ActionLink("View", "Details", new { id = item.Trip.Id })</td>
+        </tr>
+        <tr>
+            <th>To:</th>
+            <td>@Html.DisplayFor(modelItem => item.Trip.To)</td>
+        </tr>
+
+    }
+</table>

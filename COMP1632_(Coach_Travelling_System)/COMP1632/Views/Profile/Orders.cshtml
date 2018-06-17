@@ -1,0 +1,42 @@
+﻿@model IEnumerable<COMP1632.Models.Order>
+@{
+    ViewBag.Title = "Orders";
+}
+<div class="container" style="padding-left: 0; margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-4">
+            @Html.Partial("_ProfileCustomerPartialNav")
+        </div>
+        <div class="col-md-8">
+            @foreach (var order in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row panel-title">
+                            <div class="col-md-3"><strong>Order Number:</strong></div>
+                            <div class="col-md-3">@Html.DisplayFor(o => order.Id)</div>
+                            <div class="col-md-3"><strong>Total:</strong></div>
+                            <div class="col-md-3">@Html.DisplayFor(o => order.Total)</div>
+                        </div>
+                    </div>
+
+                    @foreach (var orderItem in order.OrderItems)
+                    {
+                        <div class="row panel-body">
+                            <div class="col-md-3">@Html.DisplayFor(u => orderItem.Title)</div>
+                            <div class="col-md-1"><strong>Price:</strong></div>
+                            <div class="col-md-2">@Html.DisplayFor(u => orderItem.Price)</div>
+                            <div class="col-md-2"><strong>Quantity:</strong></div>
+                            <div class="col-md-1">@Html.DisplayFor(u => orderItem.Quantity)</div>
+                            @if (orderItem.ReviewId == null)
+                            {
+                                <div class="col-md-3">@Html.ActionLink("Write a review", "Review", new { TripId = orderItem.TripId, OrderItemId = orderItem.Id })</div>
+                            }
+
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

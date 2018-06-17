@@ -1,0 +1,42 @@
+﻿@model COMP1632.Models.Customer
+@{
+    ViewBag.Title = "Info";
+}
+<div class="container" style="padding-left: 0; margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-4">
+            @Html.Partial("_ProfileCustomerPartialNav")
+        </div>
+        <div class="col-md-8 panel panel-default">
+            <div class="row panel-body">
+                <div class="col-md-3">
+                    <strong>Username:</strong>
+                </div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.User.Username)</div>
+            </div>
+            <div class="row panel-body">
+                <div class="col-md-3">
+                    <strong>First Name:</strong>
+                </div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.User.FirstName)</div>
+                <div class="col-md-3">
+                    <strong>Surname:</strong>
+                </div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.User.Surname)</div>
+            </div>
+            <div class="row panel-body">
+                <div class="col-md-3">
+                    <strong>E-mail:</strong>
+                </div>
+                <div class="col-md-2">@Html.DisplayFor(model => model.Email)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+
+
+

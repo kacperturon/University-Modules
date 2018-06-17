@@ -1,0 +1,6 @@
+﻿<ul class="nav nav-pills nav-stacked" style="margin-right: 5%;">
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" || ViewContext.RouteData.Values["Action"].ToString() == "General" ? "active" : "")">@Html.ActionLink("General", "Index", "Profile")</li>
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Trips" ? "active" : "")">@Html.ActionLink("Trips", "Trips", "Profile")</li>
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Orders" ? "active" : "")">@Html.ActionLink("Orders", "Orders", "Profile")</li>
+    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Enquiries" ? "active" : "")">@Html.ActionLink("Enquiries", "Enquiries", "Profile")</li>
+</ul>

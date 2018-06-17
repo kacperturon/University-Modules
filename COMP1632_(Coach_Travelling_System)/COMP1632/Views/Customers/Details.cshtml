@@ -1,0 +1,67 @@
+﻿@model COMP1632.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Username
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Username)
+        </dd>
+
+        <dt>
+            First name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+        <dt>
+            Surname
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Surname)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        
+
+    </dl>
+    <div class="panel panel-default">
+        <div class="row">
+            <div class="col-md-3">
+                <strong>Credit card number</strong>
+            </div>
+            <div class="col-md-2">@Html.DisplayFor(model => model.CreditCard.CardNumber)</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>Credit card expiry date</strong>
+            </div>
+            <div class="col-md-2">@Html.DisplayFor(model => model.CreditCard.ExpiryDate)</div>
+        </div>
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

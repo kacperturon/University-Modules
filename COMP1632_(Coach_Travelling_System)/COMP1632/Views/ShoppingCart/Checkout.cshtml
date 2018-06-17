@@ -1,0 +1,44 @@
+﻿@model COMP1632.Models.Order
+
+@if (Model != null)
+{
+
+    <div class="page-header"><h2>Order Confirmation</h2></div>
+
+    <table class="table">
+
+    <tr>
+        <th>Order Number:</th>
+        <td>@Html.DisplayFor(o => o.Id)</td>
+    </tr>
+    <tr>
+        <th>Total:</th>
+        <td>@Html.DisplayFor(o => o.Total)</td>
+    </tr>
+
+    @foreach (var orderItem in Model.OrderItems)
+    {
+        <tr>
+            <th>Title: </th>
+            <td>@Html.DisplayFor(u => orderItem.Title)</td>
+            <th>Price: </th>
+            <td>@Html.DisplayFor(u => orderItem.Price)</td>
+            <th>Quantity: </th>
+            <td>@Html.DisplayFor(u => orderItem.Quantity)</td>
+        </tr>
+        <tr>
+            <th>Seat Numbers:</th>
+            <td>
+                @foreach (var ticket in orderItem.SeatNumbers)
+                {
+                    <span class="label label-default" style="display: inline-block;">
+                        @Html.DisplayFor(t => ticket)
+                    </span>
+                }
+            </td>
+        </tr>
+    }
+        
+
+    </table>
+}

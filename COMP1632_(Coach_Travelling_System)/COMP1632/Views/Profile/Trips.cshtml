@@ -1,0 +1,42 @@
+﻿@model COMP1632.ViewModels.TripsProfileViewModel
+@{
+    ViewBag.Title = "Trips";
+}
+<div class="container" style="padding-left: 0; margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-4">
+            @Html.Partial("_ProfileCustomerPartialNav")
+        </div>
+        <div class="col-md-8 panel panel-default">
+                @foreach (var item in Model.Trips)
+                {
+                    <div class="row  ">
+                        <div class="row  panel-body">
+                            <div class="col-md-6"><strong>@Html.DisplayFor(modelItem => item.Title)</strong></div>
+                            <div class="col-md-6">@Html.ActionLink("Amend a booking", "AmendBooking", new { id = item.Id })</div>
+                        </div>
+                        <div class="row panel-body">
+                            <div class="col-md-3"><strong>Departure date:</strong></div>
+                            <div class="col-md-3">@Html.DisplayFor(modelItem => item.DepartureDate.Date)</div>
+                            <div class="col-md-3"><strong>Return date:</strong></div>
+                            <div class="col-md-3">@Html.DisplayFor(modelItem => item.ReturnDate.Date)</div>
+                        </div>
+
+                        <div class="row panel-body">
+                            <div class="col-md-3"><strong>Seat Numbers:</strong></div>
+                                <div class="col-md-9">
+                                    @foreach (var ticket in item.Tickets)
+                                    {
+                                        <span class="label label-default" style="display: inline-block;">
+                                            @Html.DisplayFor(t => ticket.SeatNumber)
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                    </div>
+                }
+
+        </div>
+    </div>
+</div>
+

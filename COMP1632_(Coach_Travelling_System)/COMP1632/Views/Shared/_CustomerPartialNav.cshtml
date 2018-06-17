@@ -1,0 +1,9 @@
+﻿
+<ul class="nav navbar-nav navbar-left">
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+    <li>@{ Html.RenderAction("CartSummary", "ShoppingCart"); }</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li>@Html.ActionLink("Logout", "Logout", "Authentication")</li>
+</ul>

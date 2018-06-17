@@ -1,0 +1,32 @@
+﻿@model COMP1632.Models.Trip
+@{
+    ViewBag.Title = "Reviews";
+}
+<div class="page-header">
+    <h3 style="margin-bottom: 15px;">@Model.Title <small>REVIEWS</small></h3>
+</div>
+
+@foreach (var item in Model.Reviews)
+{
+    <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+            <div class="col-md-2"><strong>Rating:</strong></div>
+            <div class="col-md-2">
+                @for (int i = 0; i < item.Rating; i++)
+                {
+                    <div class="rate glyphicon glyphicon-star starSelected"></div>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><strong>Description:</strong></div>
+            <div class="col-md-10">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-10"><em>@Html.DisplayFor(modelItem => item.Customer.User.Username)</em></div>
+        </div>
+
+    </div>
+}
+
+<td>@Html.ActionLink("Back to trip", "Details", new { id = @Model.Id },  new { @class = "btn btn-default" })</td>
