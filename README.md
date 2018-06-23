@@ -1,13 +1,13 @@
 
 # Table of contents
  * [Year 2](#year-2)
-	* [COMP1549 (Advanced Programming)](#comp1549--advanced-programming----aircraft-dashboard)
- 	* [COMP1551 (Application & Web Development)](#comp1551--application---web-development----electronic-school-register)
- 	* [COMP1555 (Computer Algorithms and Modelling)](#comp1555--computer-algorithms-and-modelling----statistical-model-using-numerical-integration)
- 	* [COMP1632 (Systems Development Project)](#comp1632--systems-development-project----coach-travelling-system)
+	* [COMP1549 (Advanced Programming)](#comp1549-advanced-programming---aircraft-dashboard)
+ 	* [COMP1551 (Application & Web Development)](#comp1551-application-and-web-development---electronic-school-register)
+ 	* [COMP1555 (Computer Algorithms and Modelling)](#comp1555-computer-algorithms-and-modelling---statistical-model-using-numerical-integration)
+ 	* [COMP1632 (Systems Development Project)](#comp1632-systems-development-project---coach-travelling-system)
  * [Year 1](#year-1)
-	* [COMP1148 (Computer Programming)](#comp1148--computer-programming----stock-control-simulation)
-	* [COMP1588 (Computer Systems Architectures)](#comp1588--computer-systems-architectures----torpedo-game)
+	* [COMP1148 (Computer Programming)](#comp1148-computer-programming---stock-control-simulation)
+	* [COMP1588 (Computer Systems Architectures)](#comp1588-computer-systems-architectures---torpedo-game)
     
 ## Year 2
 ### COMP1549 (Advanced Programming) - Aircraft Dashboard
@@ -18,7 +18,7 @@
     * Press green button on the top `Run` if asked about the specific file run `/main/main.java`
 
 
-### COMP1551 (Application & Web Development) - Electronic School Register
+### COMP1551 (Application and Web Development) - Electronic School Register
  * **Requirements**
    * *IDE Visual Studio with .net development environment*
    * *Microsoft Access Database Engine 2010 Redistributable - https://www.microsoft.com/en-gb/download/details.aspx?id=13255*
