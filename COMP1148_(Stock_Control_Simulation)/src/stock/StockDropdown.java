@@ -18,7 +18,7 @@ public class StockDropdown extends JPanel{
     private static JComboBox itemsDropdown = new JComboBox();
     private JLabel image;
     private JLabel priceL = new JLabel();
-    DecimalFormat pounds = new DecimalFormat("Â£#,##0.00");
+    DecimalFormat pounds = new DecimalFormat("£#,##0.00");
     StockData sD;
     private JPanel top = new JPanel();
     private JPanel middle = new JPanel();

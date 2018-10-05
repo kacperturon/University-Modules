@@ -28,7 +28,7 @@ public class PurchaseStock
     JPanel shop = new JPanel(new GridBagLayout());
     GridBagConstraints shopC = new GridBagConstraints();
     JPanel checkout = new JPanel();
-    DecimalFormat pounds = new DecimalFormat("‎£###,##0.00");
+    DecimalFormat pounds = new DecimalFormat("�###,##0.00");
     GridBagConstraints quantityC = new GridBagConstraints();
     JPanel quantityP = new JPanel(new GridBagLayout());
     JLabel quantityL = new JLabel("Quantity: ");

@@ -18,7 +18,7 @@ public class Master extends JFrame implements ActionListener {
     JButton purchase = new JButton("Purchase Item");
     JButton stock = new JButton("Update Stock");
     JButton quit = new JButton("Exit");
-    static DecimalFormat pounds = new DecimalFormat("‎£###,##0.00");
+    static DecimalFormat pounds = new DecimalFormat("�###,##0.00");
     static JLabel image;
     //Map<String, StockData.Item> stock = StockData.getStock();
     static JPanel items = new JPanel();

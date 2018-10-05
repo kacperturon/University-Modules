@@ -17,7 +17,7 @@ public class StockTable{
     public int Index=0;
     private String code;
     private int Quantity;
-    DecimalFormat pounds = new DecimalFormat("‎£###,##0.00");
+    DecimalFormat pounds = new DecimalFormat("�###,##0.00");
     static String col[] = {"Stock Name","Price","Quantity"};
     static DefaultTableModel tableModel = new DefaultTableModel(col, 0){
        @Override
