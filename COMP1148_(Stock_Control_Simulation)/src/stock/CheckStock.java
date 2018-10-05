@@ -10,7 +10,7 @@ public class CheckStock extends JFrame implements ActionListener { //Initiating 
     JTextField stockNo = new JTextField(7); //Initialising text field
     JTextArea information = new JTextArea(3, 30); //Initialising text area
     JButton check = new JButton("Check Stock"); //Initialising button
-    DecimalFormat pounds = new DecimalFormat("Â£#,##0.00"); //Initialising decimal format of a pound
+    DecimalFormat pounds = new DecimalFormat("£#,##0.00"); //Initialising decimal format of a pound
     public CheckStock() { //Creating basic constructor
         setLayout(new BorderLayout()); //Setting layout of our JFrame 
         setBounds(100, 100, 450, 150); //Chaning the size of JFrame
